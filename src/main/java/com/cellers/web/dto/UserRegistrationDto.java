@@ -21,5 +21,13 @@ public class UserRegistrationDto {
 		this.email = email;
 		this.password = password;
 	}
+	
+	public UserRegistrationDto(UserRegistrationDto usrDto) {
+		super();
+		this.email = usrDto.getEmail();
+		this.firstName = usrDto.getFirstName();
+		this.lastName = usrDto.getLastName();
+		this.password = usrDto.getPassword();
+	}
 
 }

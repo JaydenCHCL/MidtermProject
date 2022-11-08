@@ -31,7 +31,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public User save(UserRegistrationDto registrationDto) {
+	public User save(UserRegistrationDto registrationDto) throws Exception{
 		User user;
 		//If email has the correct email tag, flag them as an admin, else, they are a user
 		if (registrationDto.getEmail().contains("@mtp.com")) {
@@ -49,6 +49,10 @@ public class UserServiceImpl implements UserService {
 					registrationDto.getEmail(), 
 					passwordEncoder.encode(registrationDto.getPassword()),
 					Arrays.asList(new Role("ROLE_USER")));
+		}
+		
+		if(userRepository.findByEmail(user.getEmail()) != null) {
+			throw new Exception("User already exist!");
 		}
 
 		return userRepository.save(user);
