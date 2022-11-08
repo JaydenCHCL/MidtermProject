@@ -46,7 +46,7 @@ public class ProductController {
 		this.productRepository.deleteById(id);
 	}
 
-	@PostMapping("products/add/{product}")
+	@PostMapping("products/add/")
 	public void addProduct(@RequestBody Product product) {
 		this.productRepository.save(new Product(product));
 	}

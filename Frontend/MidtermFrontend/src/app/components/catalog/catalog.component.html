@@ -2,7 +2,7 @@
 
 <!--<mat-card class="product-card">
 
-    <img mat-card-image src="assets\productImages\iPhoneimg.jfif">
+    <img mat-card-image src="assets\productImages\iPhone.jfif">
     <mat-card-content>
         <h3>Product Name</h3>
         <h4>Product Price</h4>
@@ -18,7 +18,7 @@
     <mat-grid-tile *ngFor="let product of products" >
         <mat-card class="product-card">
             
-            <img mat-card-sm-image src="{{product.img_url}}" alt = "product.img_url">
+            <img mat-card-lg-image src={{product.img_url}} alt = "product.img_url">
             
             <mat-card-content>
                 <h3>{{product.name}}</h3>
